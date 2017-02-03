@@ -1,7 +1,13 @@
 <!--
 Rails views can simply contain static HTML. This means we can begin customizing the Home and Help pages even with no knowledge of Rails
 -->
-
+<% provide(:title, "About") %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+</head>
+<body>
 <h1>About</h1>
 <p>
   The <a href="http://www.railstutorial.org/"><em>Ruby on Rails
@@ -12,3 +18,6 @@ Rails views can simply contain static HTML. This means we can begin customizing 
   <a href="http://rubyonrails.org/">Ruby on Rails</a>.
   This is the sample application for the tutorial.
 </p>
+</body>
+</html>
+
