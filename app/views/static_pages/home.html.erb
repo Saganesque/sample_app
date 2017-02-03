@@ -1,2 +1,11 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<!--
+Rails views can simply contain static HTML. This means we can begin customizing the Home and Help pages even with no knowledge of Rails
+-->
+<% provide(:title, "Home") %>
+<h1>Sample App</h1>
+<p>
+  This is the home page for the
+  <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+  sample application.
+</p>
+
