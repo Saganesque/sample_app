@@ -1,5 +1,8 @@
 require 'test_helper'
 
+
+#In addition to coming equipped with a large number of built-in functions for use in the views, Rails also allows the creation of new ones. Such functions are called helpers;
+
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   def setup
     @base_title = "Ruby on Rails Tutorial Sample App"
@@ -8,12 +11,12 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get root" do
    get root_url
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
   test "should get home" do
     get static_pages_home_url
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "should get help" do

@@ -1,9 +1,19 @@
 <!DOCTYPE html>
+<!--
+So, we see now that the line
+
+stylesheet_link_tag 'application', media: 'all',
+'data-turbolinks-track': 'reload'
+
+calls the stylesheet_link_tag function with two arguments: a string, indicating the path to the stylesheet, and a hash with two elements, indicating the media type and telling Rails to use the turbolinks feature added in Rails 4.0. Because of the <%= %> brackets, the results are inserted into the template by ERb, and if you view the source of the page in your browser you should see the HTML needed to include a stylesheet (Listing 4.14). (You may see some extra things, like ?body=1, after the CSS filenames. These are inserted by Rails to ensure that browsers reload the CSS when it changes on the server.)
+-->
+
 <html>
   <head>
-    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App </title>
+    <title><%= full_title(yield(:title)) %> </title>
     <%= csrf_meta_tags %>
-
+<!--   My note:    When hashes are the last argument in a function call, the curly braces are optional
+ -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
