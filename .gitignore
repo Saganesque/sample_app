@@ -23,3 +23,7 @@
 .idea/*
 
 /spring/*.pid
+/x.rb
+
+.virb
+.swp
