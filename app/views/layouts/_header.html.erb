@@ -1,0 +1,18 @@
+<!--All HTML elements can be assigned both classes and ids; these are merely labels, and are useful for styling with CSS (Section 5.1.2). The main difference between classes and ids is that classes can be used multiple times on a page, but ids can be used only once. In the present case, all the navbar classes have special meaning to the Bootstrap framework, which we’ll install and use in Section 5.1.2.-->
+
+<!--In CSS, selectors are patterns used to select the element(s) you want to style. http://www.w3schools.com/cssref/css_selectors.asp-->
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+
+   <!--This uses the Rails helper link_to to create links (which we created directly with the anchor tag a in Section 3.2.2); the first argument to link_to is the link text, while the second is the URL. We’ll fill in the URLs with named routes in Section 5.3.3, but for now we use the stub URL ’#’ commonly used in web design (i.e., ’#’ is just a “stub”, or placeholder, for the real URL). The third argument is an options hash, in this case adding the CSS id logo to the sample app link. (The other three links have no options hash, which is fine since it’s optional.) -->
+
+    <%= link_to "sample app", '#', id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home",   '#' %></li>
+        <li><%= link_to "Help",   '#' %></li>
+        <li><%= link_to "Log in", '#' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

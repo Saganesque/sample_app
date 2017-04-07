@@ -10,41 +10,14 @@ calls the stylesheet_link_tag function with two arguments: a string, indicating 
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <!-- He uses a rails helper here to insert the meta tags that prevent the cross-site request  attack that forces an end user to execute unwanted actions on a web application in which they're currently authenticated.-->
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all',
-                             'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-  <!-- The weird [if lt IE 9] syntax below is not part of Rails; it’s actually a conditional comment supported by Internet Explorer browsers for just this sort of situation. -->
-
-  <!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-  </script>
-  <![endif]-->
+  <%= render 'layouts/rails_default' %>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
-
-<!--All HTML elements can be assigned both classes and ids; these are merely labels, and are useful for styling with CSS (Section 5.1.2). The main difference between classes and ids is that classes can be used multiple times on a page, but ids can be used only once. In the present case, all the navbar classes have special meaning to the Bootstrap framework, which we’ll install and use in Section 5.1.2.-->
-
-<!--In CSS, selectors are patterns used to select the element(s) you want to style. http://www.w3schools.com/cssref/css_selectors.asp-->
-<header class="navbar navbar-fixed-top navbar-inverse">
+  <%= render 'layouts/header' %>
   <div class="container">
-
-   <!--This uses the Rails helper link_to to create links (which we created directly with the anchor tag a in Section 3.2.2); the first argument to link_to is the link text, while the second is the URL. We’ll fill in the URLs with named routes in Section 5.3.3, but for now we use the stub URL ’#’ commonly used in web design (i.e., ’#’ is just a “stub”, or placeholder, for the real URL). The third argument is an options hash, in this case adding the CSS id logo to the sample app link. (The other three links have no options hash, which is fine since it’s optional.) -->
-
-    <%= link_to "sample app", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Log in", '#' %></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<div class="container">
   <%= yield %>
+  <%= render 'layouts/footer' %>
 </div>
 </body>
 </html>

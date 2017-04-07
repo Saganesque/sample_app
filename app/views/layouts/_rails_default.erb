@@ -1,0 +1,5 @@
+<!-- He uses a rails helper here to insert the meta tags that prevent the cross-site request  attack that forces an end user to execute unwanted actions on a web application in which they're currently authenticated.-->
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag    'application', media: 'all',
+                           'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
