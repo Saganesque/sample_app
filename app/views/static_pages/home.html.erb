@@ -8,7 +8,7 @@ Rails views can simply contain static HTML. This means we can begin customizing 
   <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
   sample application.
 </h2>
-  <%= link_to "Sign up now", '#', class: "btn btn-lg btn-primary" %>
+  <%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 <!-- The second link_to shows off the image_tag helper, which takes as arguments the path to an image and an optional options hash, in this case setting the alt attribute of the image tag using symbols. If you inspect this element in the browser, you'll note that the string 9308b8f92fea4c19a3a0d8385b494526 (which will differ on your system) is added by Rails to ensure that the filename is unique, which causes browsers to load images properly when they have been updated (instead of retrieving them from the browser cache). Also note that the src attribute doesn’t include /images, instead using an assets directory common to all assets (images, JavaScript, CSS, etc.). On the server, Rails associates images in the assets directory with the proper app/assets/images directory, but as far as the browser is concerned all the assets look like they are in the same directory, which allows them to be served faster.-->
 <%= link_to image_tag("rails.png", alt: "Rails logo"),

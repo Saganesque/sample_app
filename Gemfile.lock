@@ -43,6 +43,10 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (6.7.7.1)
       execjs
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.11)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
@@ -58,14 +62,8 @@ GEM
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
     coderay (1.1.1)
-    coffee-rails (4.2.1)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.1)
     cucumber (2.4.0)
       builder (>= 2.1.2)
       cucumber-core (~> 1.5.0)
@@ -317,6 +315,12 @@ GEM
       json (>= 1.8)
       nokogiri (~> 1.5)
       trollop (~> 2.1)
+    react-rails (2.0.2)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -388,7 +392,6 @@ DEPENDENCIES
   bootstrap-will_paginate (= 0.0.10)
   byebug (= 9.0.0)
   carrierwave (= 0.11.2)
-  coffee-rails (= 4.2.1)
   cucumber
   faker (= 1.6.6)
   fog (= 1.38.0)
@@ -404,6 +407,7 @@ DEPENDENCIES
   puma (= 3.4.0)
   rails (= 5.0.1)
   rails-controller-testing (= 0.1.1)
+  react-rails
   rspec-rails
   sass-rails (= 5.0.6)
   spring (= 1.7.2)
